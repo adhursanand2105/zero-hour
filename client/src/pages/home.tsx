@@ -2,9 +2,11 @@ import { StatusBar } from "@/components/status-bar";
 import { ProgressBar } from "@/components/progress-bar";
 import { StepCard } from "@/components/step-card";
 import { useState, useRef, useEffect } from "react";
+import { countries, getCountryByDialCode, Country } from "@/data/countries";
 
 export default function Home() {
   const [countryCode, setCountryCode] = useState('+1');
+  const [selectedCountry, setSelectedCountry] = useState<Country>(countries[0]); // Default to US
   const [phoneNumber, setPhoneNumber] = useState('123 456 7890');
   const [codeDigits, setCodeDigits] = useState(['1', '5', '9', '2', '3']);
   const [activeDigit, setActiveDigit] = useState(0);
@@ -54,6 +56,17 @@ export default function Home() {
     }
   };
 
+  const handleCountryCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newCode = e.target.value;
+    setCountryCode(newCode);
+    
+    // Find matching country
+    const matchingCountry = getCountryByDialCode(newCode);
+    if (matchingCountry) {
+      setSelectedCountry(matchingCountry);
+    }
+  };
+
   return (
     <div className="bg-black text-white min-h-screen">
       <StatusBar />
@@ -81,16 +94,16 @@ export default function Home() {
           label={<><span className="text-light-gray">→</span> Log in with your phone number</>}
         >
           <div className="flex items-center mb-4">
-            <span className="text-2xl mr-3">🇺🇸</span>
-            <span className="text-telegram-blue font-medium">United States</span>
+            <span className="text-2xl mr-3">{selectedCountry.flag}</span>
+            <span className="text-telegram-blue font-medium">{selectedCountry.name}</span>
           </div>
           
           <div className="flex items-center space-x-3">
             <input 
               type="text" 
-              className="bg-gray-800 rounded-lg px-3 py-4 text-white font-mono text-lg w-16 text-center outline-none border border-gray-600 focus:border-telegram-blue transition-colors"
+              className="bg-gray-800 rounded-lg px-3 py-4 text-white font-mono text-lg w-20 text-center outline-none border border-gray-600 focus:border-telegram-blue transition-colors"
               value={countryCode}
-              onChange={(e) => setCountryCode(e.target.value)}
+              onChange={handleCountryCodeChange}
               placeholder="+1"
             />
             <input 
