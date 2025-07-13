@@ -175,8 +175,8 @@ export default function Home() {
             <div>
               <div className="text-white font-medium">ascode_</div>
               <div className="text-sm text-text-secondary flex items-center">
-                <span className="text-light-gray">ascode_ login code:</span> 
-                <button className="code-button ml-2">15923</button>
+                <span className="text-light-gray ios-font">Generate login code:</span> 
+                <button className="code-button ml-2">Generate</button>
               </div>
             </div>
           </div>
