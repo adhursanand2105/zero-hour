@@ -209,6 +209,75 @@
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
   }
   
+  .phone-number-container {
+    display: flex;
+    align-items: center;
+    background: hsl(0, 0%, 16%);
+    border: 1px solid hsl(0, 0%, 20%);
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  
+  .phone-number-container:focus-within {
+    border-color: var(--telegram-blue);
+    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.1);
+  }
+  
+  .phone-section {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    min-height: 56px;
+  }
+  
+  .flag-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    min-width: 120px;
+  }
+  
+  .code-section {
+    justify-content: center;
+    min-width: 80px;
+  }
+  
+  .number-section {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .phone-divider {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, hsl(0, 0%, 25%), transparent);
+    opacity: 0.6;
+  }
+  
+  .country-code-input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: 'SF Mono', Monaco, Menlo, monospace;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    outline: none;
+  }
+  
+  .phone-number-input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: 'SF Mono', Monaco, Menlo, monospace;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+  }
+  
   .progress-bar {
     width: 100%;
     height: 4px;

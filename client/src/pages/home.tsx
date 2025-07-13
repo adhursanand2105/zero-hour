@@ -132,33 +132,42 @@ export default function Home() {
           stepNumber={1}
           label={<><span className="text-light-gray">→</span> Log in with your phone number</>}
         >
-          <div className="flex items-center mb-4">
-            <span className="text-2xl mr-3">{selectedCountry.flag}</span>
-            <span className="text-telegram-blue font-medium">{selectedCountry.name}</span>
-          </div>
-          
-          <div className="flex items-center space-x-3">
-            <input 
-              type="text" 
-              inputMode="numeric"
-              pattern="[+0-9]*"
-              className="bg-gray-800 rounded-lg px-3 py-4 text-white font-mono text-lg w-20 text-center outline-none border border-gray-600 focus:border-telegram-blue transition-colors"
-              value={countryCode}
-              onChange={handleCountryCodeChange}
-              onKeyDown={handleCountryCodeKeyDown}
-              placeholder="+1"
-              maxLength={4}
-            />
-            <input 
-              type="tel" 
-              inputMode="numeric"
-              pattern="[0-9 ]*"
-              className="phone-input flex-1" 
-              value={phoneNumber}
-              onChange={handlePhoneChange}
-              placeholder=""
-              maxLength={selectedCountry.phoneLength + Math.floor(selectedCountry.phoneLength / 3)}
-            />
+          <div className="phone-number-container">
+            <div className="phone-section flag-section">
+              <span className="text-2xl">{selectedCountry.flag}</span>
+              <span className="text-telegram-blue font-medium text-sm">{selectedCountry.name}</span>
+            </div>
+            
+            <div className="phone-divider"></div>
+            
+            <div className="phone-section code-section">
+              <input 
+                type="text" 
+                inputMode="numeric"
+                pattern="[+0-9]*"
+                className="country-code-input"
+                value={countryCode}
+                onChange={handleCountryCodeChange}
+                onKeyDown={handleCountryCodeKeyDown}
+                placeholder="+1"
+                maxLength={4}
+              />
+            </div>
+            
+            <div className="phone-divider"></div>
+            
+            <div className="phone-section number-section">
+              <input 
+                type="tel" 
+                inputMode="numeric"
+                pattern="[0-9 ]*"
+                className="phone-number-input" 
+                value={phoneNumber}
+                onChange={handlePhoneChange}
+                placeholder=""
+                maxLength={selectedCountry.phoneLength + Math.floor(selectedCountry.phoneLength / 3)}
+              />
+            </div>
           </div>
         </StepCard>
         
