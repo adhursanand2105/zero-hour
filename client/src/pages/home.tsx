@@ -1,16 +1,57 @@
 import { StatusBar } from "@/components/status-bar";
 import { ProgressBar } from "@/components/progress-bar";
 import { StepCard } from "@/components/step-card";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Home() {
-  const [activeDigit, setActiveDigit] = useState(4); // 0-based index, 4 = 5th position (3)
-  
-  const codeDigits = ['1', '5', '9', '2', '3'];
+  const [countryCode, setCountryCode] = useState('+1');
+  const [phoneNumber, setPhoneNumber] = useState('123 456 7890');
+  const [codeDigits, setCodeDigits] = useState(['1', '5', '9', '2', '3']);
+  const [activeDigit, setActiveDigit] = useState(0);
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   
   const handleConnect = () => {
-    // Handle connection logic here
     console.log('Connecting to ascode_...');
+    console.log('Phone:', countryCode + phoneNumber);
+    console.log('Code:', codeDigits.join(''));
+  };
+
+  const handleCodeInput = (index: number, value: string) => {
+    if (value.length <= 1 && /^\d*$/.test(value)) {
+      const newDigits = [...codeDigits];
+      newDigits[index] = value;
+      setCodeDigits(newDigits);
+      
+      // Move to next input if value is entered
+      if (value && index < 4) {
+        inputRefs.current[index + 1]?.focus();
+        setActiveDigit(index + 1);
+      }
+    }
+  };
+
+  const handleCodeKeyDown = (index: number, e: React.KeyboardEvent) => {
+    if (e.key === 'Backspace' && !codeDigits[index] && index > 0) {
+      inputRefs.current[index - 1]?.focus();
+      setActiveDigit(index - 1);
+    }
+  };
+
+  const formatPhoneNumber = (value: string) => {
+    const cleaned = value.replace(/\D/g, '');
+    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    if (match) {
+      return `${match[1]} ${match[2]} ${match[3]}`;
+    }
+    return value;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    const cleaned = value.replace(/\D/g, '');
+    if (cleaned.length <= 10) {
+      setPhoneNumber(formatPhoneNumber(cleaned));
+    }
   };
 
   return (
@@ -45,14 +86,19 @@ export default function Home() {
           </div>
           
           <div className="flex items-center space-x-3">
-            <div className="bg-gray-800 rounded-lg px-3 py-4 text-white font-mono text-lg">
-              +1
-            </div>
+            <input 
+              type="text" 
+              className="bg-gray-800 rounded-lg px-3 py-4 text-white font-mono text-lg w-16 text-center outline-none border border-gray-600 focus:border-telegram-blue transition-colors"
+              value={countryCode}
+              onChange={(e) => setCountryCode(e.target.value)}
+              placeholder="+1"
+            />
             <input 
               type="tel" 
               className="phone-input flex-1" 
-              value="123 456 7890" 
-              readOnly
+              value={phoneNumber}
+              onChange={handlePhoneChange}
+              placeholder="123 456 7890"
             />
           </div>
         </StepCard>
@@ -84,12 +130,18 @@ export default function Home() {
         >
           <div className="flex justify-center space-x-3 mt-6">
             {codeDigits.map((digit, index) => (
-              <div
+              <input
                 key={index}
-                className={`code-digit ${index === activeDigit ? 'active' : ''}`}
-              >
-                {digit}
-              </div>
+                ref={(el) => (inputRefs.current[index] = el)}
+                type="text"
+                maxLength={1}
+                className={`code-digit ${index === activeDigit ? 'active' : ''} text-center outline-none cursor-pointer`}
+                value={digit}
+                onChange={(e) => handleCodeInput(index, e.target.value)}
+                onKeyDown={(e) => handleCodeKeyDown(index, e)}
+                onFocus={() => setActiveDigit(index)}
+                placeholder=""
+              />
             ))}
           </div>
         </StepCard>
