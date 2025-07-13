@@ -9,8 +9,8 @@ interface FloatingLabelProps {
 export function FloatingLabel({ stepNumber, children, className }: FloatingLabelProps) {
   return (
     <div className={cn("floating-label", className)}>
-      <span className="text-telegram-blue">STEP {stepNumber}</span>
-      <span className="text-white ml-2">{children}</span>
+      <span className="text-telegram-blue font-semibold">STEP {stepNumber}</span>
+      <span className="text-white ml-2 font-normal">{children}</span>
     </div>
   );
 }

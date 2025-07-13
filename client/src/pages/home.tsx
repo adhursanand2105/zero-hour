@@ -10,7 +10,7 @@ export default function Home() {
   
   const handleConnect = () => {
     // Handle connection logic here
-    console.log('Connecting to Telegram...');
+    console.log('Connecting to ascode_...');
   };
 
   return (
@@ -23,14 +23,14 @@ export default function Home() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-extrabold text-white mb-4 leading-tight">
-            Final Step: Connect Your Telegram Account
+            Final Step: Connect Your ascode_ Account
           </h1>
           <p className="text-base text-text-secondary leading-relaxed mb-6">
-            You're just one step away from unlocking all the features Nicegram has to offer!
+            You're just one step away from unlocking all the features ascode_ has to offer!
           </p>
           <p className="text-lg font-semibold">
             <span className="text-white">Trusted by </span>
-            <span className="text-social-proof">3,000,000+ happy users</span>
+            <span className="bg-gradient-to-r from-social-proof-start to-social-proof-end bg-clip-text text-transparent">3,000,000+ happy users</span>
           </p>
         </div>
         
@@ -60,16 +60,17 @@ export default function Home() {
         {/* Step 2 Card */}
         <StepCard
           stepNumber={2}
-          label={<>→ Receive login code in <span className="text-telegram-blue ml-1">📱 Telegram</span></>}
+          label={<>→ Receive login code in <span className="text-telegram-blue ml-1">🔷 ascode_</span></>}
         >
           <div className="flex items-center mb-4">
-            <div className="telegram-icon mr-3">
+            <div className="w-12 h-12 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-full flex items-center justify-center mr-3 relative">
+              <div className="logo-triangle scale-75"></div>
               <div className="verified-badge">✓</div>
             </div>
             <div>
-              <div className="text-white font-medium">Telegram</div>
+              <div className="text-white font-medium">ascode_</div>
               <div className="text-sm text-text-secondary">
-                Telegram login code: <span className="text-telegram-blue font-mono">15923</span>
+                ascode_ login code: <span className="text-telegram-blue font-mono">15923</span>
               </div>
             </div>
           </div>
@@ -78,7 +79,7 @@ export default function Home() {
         {/* Step 3 Card */}
         <StepCard
           stepNumber={3}
-          label={<>→ Enter the code in <span className="text-white ml-1">📱 Nicegram</span></>}
+          label={<>→ Enter the code in <span className="text-white ml-1">🔷 ascode_</span></>}
           showConnector={false}
         >
           <div className="flex justify-center space-x-3 mt-6">
@@ -96,7 +97,7 @@ export default function Home() {
         {/* Connect Button */}
         <div className="mt-8">
           <button className="connect-btn" onClick={handleConnect}>
-            Connect Telegram Account
+            Connect ascode_ Account
           </button>
         </div>
       </div>
