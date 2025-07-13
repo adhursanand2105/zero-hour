@@ -38,20 +38,39 @@ export default function Home() {
     }
   };
 
-  const formatPhoneNumber = (value: string) => {
+  const formatPhoneNumber = (value: string, maxLength: number) => {
     const cleaned = value.replace(/\D/g, '');
-    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
-    if (match) {
-      return `${match[1]} ${match[2]} ${match[3]}`;
+    if (maxLength === 10) {
+      const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+      if (match) {
+        return `${match[1]} ${match[2]} ${match[3]}`;
+      }
+    } else if (maxLength === 11) {
+      const match = cleaned.match(/^(\d{3})(\d{4})(\d{4})$/);
+      if (match) {
+        return `${match[1]} ${match[2]} ${match[3]}`;
+      }
+    } else if (maxLength === 9) {
+      const match = cleaned.match(/^(\d{3})(\d{3})(\d{3})$/);
+      if (match) {
+        return `${match[1]} ${match[2]} ${match[3]}`;
+      }
+    } else if (maxLength === 8) {
+      const match = cleaned.match(/^(\d{4})(\d{4})$/);
+      if (match) {
+        return `${match[1]} ${match[2]}`;
+      }
     }
-    return value;
+    return cleaned;
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const cleaned = value.replace(/\D/g, '');
-    if (cleaned.length <= 10) {
-      setPhoneNumber(formatPhoneNumber(cleaned));
+    const maxLength = selectedCountry.phoneLength;
+    
+    if (cleaned.length <= maxLength) {
+      setPhoneNumber(formatPhoneNumber(cleaned, maxLength));
     }
   };
 
@@ -99,6 +118,8 @@ export default function Home() {
           <div className="flex items-center space-x-3">
             <input 
               type="text" 
+              inputMode="numeric"
+              pattern="[+0-9]*"
               className="bg-gray-800 rounded-lg px-3 py-4 text-white font-mono text-lg w-20 text-center outline-none border border-gray-600 focus:border-telegram-blue transition-colors"
               value={countryCode}
               onChange={handleCountryCodeChange}
@@ -106,10 +127,13 @@ export default function Home() {
             />
             <input 
               type="tel" 
+              inputMode="numeric"
+              pattern="[0-9 ]*"
               className="phone-input flex-1" 
               value={phoneNumber}
               onChange={handlePhoneChange}
               placeholder="123 456 7890"
+              maxLength={selectedCountry.phoneLength + Math.floor(selectedCountry.phoneLength / 3)}
             />
           </div>
         </StepCard>
@@ -145,6 +169,8 @@ export default function Home() {
                 key={index}
                 ref={(el) => (inputRefs.current[index] = el)}
                 type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
                 maxLength={1}
                 className={`code-digit ${index === activeDigit ? 'active' : ''} text-center outline-none cursor-pointer`}
                 value={digit}
