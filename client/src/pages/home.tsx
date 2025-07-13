@@ -1,4 +1,3 @@
-import { StatusBar } from "@/components/status-bar";
 import { ProgressBar } from "@/components/progress-bar";
 import { StepCard } from "@/components/step-card";
 import { useState, useRef, useEffect } from "react";
@@ -69,7 +68,6 @@ export default function Home() {
 
   return (
     <div className="bg-black text-white min-h-screen">
-      <StatusBar />
       <ProgressBar />
       
       {/* Main Content */}
