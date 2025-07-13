@@ -145,23 +145,29 @@
   }
   
   .connect-btn {
-    background: white;
-    color: black;
-    border-radius: 24px;
+    background: #007AFF;
+    color: white;
+    border-radius: 25px;
     padding: 16px 32px;
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 17px;
     width: 100%;
     transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    box-shadow: none;
     border: none;
     cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   }
   
   .connect-btn:hover {
-    background: hsl(0, 0%, 94%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.15);
+    background: #0056CC;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .connect-btn:active {
+    background: #004499;
+    transform: scale(0.98);
   }
   
   .progress-bar {
