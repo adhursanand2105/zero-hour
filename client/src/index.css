@@ -252,8 +252,8 @@
   .phone-divider {
     width: 1px;
     height: 40px;
-    background: linear-gradient(to bottom, transparent, hsl(0, 0%, 25%), transparent);
-    opacity: 0.6;
+    background: hsl(0, 0%, 30%);
+    opacity: 0.8;
   }
   
   .country-code-input {
