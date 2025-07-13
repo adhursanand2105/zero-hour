@@ -30,18 +30,18 @@ export default function Home() {
           </p>
           <p className="text-lg font-semibold">
             <span className="text-white">Trusted by </span>
-            <span className="bg-gradient-to-r from-social-proof-start to-social-proof-end bg-clip-text text-transparent">3,000,000+ happy users</span>
+            <span className="text-light-blue">3,000,000+ happy users</span>
           </p>
         </div>
         
         {/* Step 1 Card */}
         <StepCard
           stepNumber={1}
-          label="→ Log in with your phone number"
+          label={<><span className="text-light-gray">→</span> Log in with your phone number</>}
         >
           <div className="flex items-center mb-4">
             <span className="text-2xl mr-3">🇺🇸</span>
-            <span className="text-white font-medium">United States</span>
+            <span className="text-telegram-blue font-medium">United States</span>
           </div>
           
           <div className="flex items-center space-x-3">
@@ -60,7 +60,7 @@ export default function Home() {
         {/* Step 2 Card */}
         <StepCard
           stepNumber={2}
-          label={<>→ Receive login code in <span className="text-telegram-blue ml-1">🔷 ascode_</span></>}
+          label={<><span className="text-light-gray">→</span> Receive login code in <span className="text-telegram-blue ml-1">🔷 ascode_</span></>}
         >
           <div className="flex items-center mb-4">
             <div className="w-12 h-12 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-full flex items-center justify-center mr-3 relative">
@@ -70,7 +70,7 @@ export default function Home() {
             <div>
               <div className="text-white font-medium">ascode_</div>
               <div className="text-sm text-text-secondary">
-                ascode_ login code: <span className="text-telegram-blue font-mono">15923</span>
+                <span className="text-light-gray">ascode_ login code:</span> <span className="text-telegram-blue font-mono">15923</span>
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function Home() {
         {/* Step 3 Card */}
         <StepCard
           stepNumber={3}
-          label={<>→ Enter the code in <span className="text-white ml-1">🔷 ascode_</span></>}
+          label={<><span className="text-light-gray">→</span> Enter the code in <span className="text-white ml-1">🔷 ascode_</span></>}
           showConnector={false}
         >
           <div className="flex justify-center space-x-3 mt-6">

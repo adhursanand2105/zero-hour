@@ -26,9 +26,12 @@
   
   /* Custom colors for the design */
   --telegram-blue: hsl(207, 100%, 58%);
-  --social-proof-start: hsl(195, 100%, 50%);
-  --social-proof-end: hsl(210, 100%, 65%);
+  --light-blue: hsl(195, 100%, 75%);
+  --sky-blue: hsl(200, 100%, 70%);
+  --social-proof-start: hsl(195, 100%, 75%);
+  --social-proof-end: hsl(200, 100%, 70%);
   --text-secondary: hsl(0, 0%, 70%);
+  --text-light-gray: hsl(0, 0%, 65%);
   --card-bg: hsl(0, 0%, 8%);
   --card-bg-secondary: hsl(0, 0%, 12%);
   --gold-primary: hsl(45, 100%, 60%);
