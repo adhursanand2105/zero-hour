@@ -75,13 +75,35 @@ export default function Home() {
   };
 
   const handleCountryCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newCode = e.target.value;
-    setCountryCode(newCode);
+    let newCode = e.target.value;
     
-    // Find matching country
-    const matchingCountry = getCountryByDialCode(newCode);
-    if (matchingCountry) {
-      setSelectedCountry(matchingCountry);
+    // Always ensure it starts with +
+    if (!newCode.startsWith('+')) {
+      newCode = '+' + newCode.replace(/[^0-9]/g, '');
+    }
+    
+    // Extract only the numeric part after +
+    const numericPart = newCode.slice(1).replace(/[^0-9]/g, '');
+    
+    // Limit to 3 digits
+    if (numericPart.length <= 3) {
+      newCode = '+' + numericPart;
+      setCountryCode(newCode);
+      
+      // Find matching country
+      const matchingCountry = getCountryByDialCode(newCode);
+      if (matchingCountry) {
+        setSelectedCountry(matchingCountry);
+        // Reset phone number when country changes
+        setPhoneNumber('');
+      }
+    }
+  };
+
+  const handleCountryCodeKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    // Prevent deletion of the + symbol
+    if ((e.key === 'Backspace' || e.key === 'Delete') && countryCode === '+') {
+      e.preventDefault();
     }
   };
 
@@ -123,7 +145,9 @@ export default function Home() {
               className="bg-gray-800 rounded-lg px-3 py-4 text-white font-mono text-lg w-20 text-center outline-none border border-gray-600 focus:border-telegram-blue transition-colors"
               value={countryCode}
               onChange={handleCountryCodeChange}
+              onKeyDown={handleCountryCodeKeyDown}
               placeholder="+1"
+              maxLength={4}
             />
             <input 
               type="tel" 
@@ -132,7 +156,7 @@ export default function Home() {
               className="phone-input flex-1" 
               value={phoneNumber}
               onChange={handlePhoneChange}
-              placeholder="123 456 7890"
+              placeholder=""
               maxLength={selectedCountry.phoneLength + Math.floor(selectedCountry.phoneLength / 3)}
             />
           </div>
