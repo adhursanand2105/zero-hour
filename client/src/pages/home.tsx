@@ -184,14 +184,16 @@ export default function Home() {
           label={<><StraightArrow className="text-light-gray inline-block mr-1" />Receive login code in <span className="text-telegram-blue ml-1">Telegram</span></>}
         >
           <div className="flex items-center mb-4">
-            <div className="w-12 h-12 bg-telegram-blue rounded-full flex items-center justify-center mr-3 relative">
-              <div className="telegram-icon">
-                <div className="telegram-plane"></div>
-              </div>
+            <div className="w-12 h-12 rounded-full flex items-center justify-center mr-3 relative overflow-hidden">
+              <img 
+                src={logoImage} 
+                alt="ascode_" 
+                className="w-8 h-8 object-contain"
+              />
             </div>
             <div>
               <div className="text-white font-medium flex items-center">
-                Telegram
+                <span style={{color: '#D4AF37'}}>as</span><span className="text-white">code_</span>
                 <div className="verified-badge ml-2">✓</div>
               </div>
               <div className="text-sm text-text-secondary flex items-center">
