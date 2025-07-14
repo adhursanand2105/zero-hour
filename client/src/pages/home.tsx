@@ -138,7 +138,11 @@ export default function Home() {
               <span className="country-name">{selectedCountry.name}</span>
             </div>
             
-            <div className="phone-divider"></div>
+            <div className="phone-divider">
+              <svg viewBox="0 0 300 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 2 L40 2 Q50 2 52 6 L300 2" stroke="#444" strokeWidth="1"/>
+              </svg>
+            </div>
             
             <div className="phone-input-row">
               <div className="country-code-section">
