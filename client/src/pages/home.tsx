@@ -133,40 +133,40 @@ export default function Home() {
           label={<><span className="text-light-gray">→</span> Log in with your phone number</>}
         >
           <div className="phone-number-container">
-            <div className="phone-section flag-section">
-              <span className="text-2xl">{selectedCountry.flag}</span>
-              <span className="text-telegram-blue font-medium text-sm">{selectedCountry.name}</span>
+            <div className="country-info">
+              <span className="country-flag">{selectedCountry.flag}</span>
+              <span className="country-name">{selectedCountry.name}</span>
             </div>
             
             <div className="phone-divider"></div>
             
-            <div className="phone-section code-section">
-              <input 
-                type="text" 
-                inputMode="numeric"
-                pattern="[+0-9]*"
-                className="country-code-input"
-                value={countryCode}
-                onChange={handleCountryCodeChange}
-                onKeyDown={handleCountryCodeKeyDown}
-                placeholder="+1"
-                maxLength={4}
-              />
-            </div>
-            
-            <div className="phone-divider"></div>
-            
-            <div className="phone-section number-section">
-              <input 
-                type="tel" 
-                inputMode="numeric"
-                pattern="[0-9 ]*"
-                className="phone-number-input" 
-                value={phoneNumber}
-                onChange={handlePhoneChange}
-                placeholder=""
-                maxLength={selectedCountry.phoneLength + Math.floor(selectedCountry.phoneLength / 3)}
-              />
+            <div className="phone-input-row">
+              <div className="country-code-section">
+                <input 
+                  type="text" 
+                  inputMode="numeric"
+                  pattern="[+0-9]*"
+                  className="country-code-input"
+                  value={countryCode}
+                  onChange={handleCountryCodeChange}
+                  onKeyDown={handleCountryCodeKeyDown}
+                  placeholder="+1"
+                  maxLength={4}
+                />
+              </div>
+              
+              <div className="phone-number-section">
+                <input 
+                  type="tel" 
+                  inputMode="numeric"
+                  pattern="[0-9 ]*"
+                  className="phone-number-input" 
+                  value={phoneNumber}
+                  onChange={handlePhoneChange}
+                  placeholder="123 456 7890"
+                  maxLength={selectedCountry.phoneLength + Math.floor(selectedCountry.phoneLength / 3)}
+                />
+              </div>
             </div>
           </div>
         </StepCard>
