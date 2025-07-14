@@ -1,6 +1,6 @@
 import { ProgressBar } from "@/components/progress-bar";
 import { StepCard } from "@/components/step-card";
-import { StraightArrow } from "@/components/curved-arrow";
+import { StraightArrow } from "@/components/straight-arrow";
 import { useState, useRef, useEffect } from "react";
 import { countries, getCountryByDialCode, Country } from "@/data/countries";
 import logoImage from "@assets/logo.png";
