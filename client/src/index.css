@@ -273,9 +273,9 @@
     content: '';
     position: absolute;
     right: -6px;
-    top: -8px;
+    top: -12px;
     width: 1px;
-    height: 28px;
+    height: 40px;
     background: #444;
   }
   
