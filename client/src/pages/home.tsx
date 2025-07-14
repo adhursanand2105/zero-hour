@@ -131,7 +131,7 @@ export default function Home() {
         {/* Step 1 Card */}
         <StepCard
           stepNumber={1}
-          label={<><span className="text-light-gray">→</span> Log in with your phone number</>}
+          label={<><span className="text-light-gray">→</span>Log in with your phone number</>}
         >
           <div className="phone-number-container">
             <div className="country-info">
@@ -180,7 +180,7 @@ export default function Home() {
         {/* Step 2 Card */}
         <StepCard
           stepNumber={2}
-          label={<><span className="text-light-gray">→</span> Receive login code in <span className="text-telegram-blue ml-1"><img src={logoImage} alt="Nicegram" className="inline-block w-4 h-4 mr-1" />Nicegram</span></>}
+          label={<><span className="text-light-gray">→</span>Receive login code in <span className="text-telegram-blue ml-1"><img src={logoImage} alt="ascode_" className="inline-block w-4 h-4 mr-1" /><span style={{color: '#D4AF37'}}>as</span><span className="text-white">code_</span></span></>}
         >
           <div className="flex items-center mb-4">
             <div className="w-12 h-12 rounded-full flex items-center justify-center mr-3 relative overflow-hidden">
@@ -192,7 +192,9 @@ export default function Home() {
               <div className="verified-badge">✓</div>
             </div>
             <div>
-              <div className="text-white font-medium">Nicegram</div>
+              <div className="text-white font-medium">
+                <span style={{color: '#D4AF37'}}>as</span><span className="text-white">code_</span>
+              </div>
               <div className="text-sm text-text-secondary flex items-center">
                 <span className="text-light-gray ios-font">Telegram login code:</span> 
                 <span className="text-white font-mono ml-2">15923</span>
@@ -205,7 +207,7 @@ export default function Home() {
         {/* Step 3 Card */}
         <StepCard
           stepNumber={3}
-          label={<><span className="text-light-gray">→</span> Enter the code in <span className="text-white ml-1">🔷 ascode_</span></>}
+          label={<><span className="text-light-gray">→</span>Enter the code in <span className="text-telegram-blue ml-1"><img src={logoImage} alt="ascode_" className="inline-block w-4 h-4 mr-1" /><span style={{color: '#D4AF37'}}>as</span><span className="text-white">code_</span></span></>}
           showConnector={false}
         >
           <div className="flex justify-center space-x-3 mt-6">
@@ -231,7 +233,7 @@ export default function Home() {
         {/* Connect Button */}
         <div className="mt-8">
           <button className="connect-btn" onClick={handleConnect}>
-            Connect ascode_ Account
+            Connect <span style={{color: '#D4AF37'}}>as</span><span className="text-white">code_</span> Account
           </button>
         </div>
       </div>
