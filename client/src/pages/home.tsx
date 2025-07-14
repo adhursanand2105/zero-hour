@@ -180,7 +180,7 @@ export default function Home() {
         {/* Step 2 Card */}
         <StepCard
           stepNumber={2}
-          label={<><span className="text-light-gray">→</span> Receive login code in <img src={logoNamePath} alt="ascode_" className="logo-image" /></>}
+          label={<><span className="text-light-gray">→</span> Receive login code in <span className="text-telegram-blue">🔷</span> <img src={logoNamePath} alt="Telegram" className="logo-image" /></>}
         >
           <div className="flex items-center mb-4">
             <div className="w-12 h-12 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-full flex items-center justify-center mr-3 relative">
