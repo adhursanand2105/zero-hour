@@ -132,20 +132,7 @@
     background: rgba(30, 144, 255, 0.1);
   }
   
-  .dotted-connector {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border: 2px dashed var(--telegram-blue);
-    border-radius: 50%;
-    border-top: none;
-    border-right: none;
-    transform: rotate(-45deg);
-    right: 20px;
-    top: 90%;
-    z-index: 5;
-    opacity: 0.8;
-  }
+
   
   .connect-btn {
     background: #007AFF;
