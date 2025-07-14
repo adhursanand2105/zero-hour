@@ -1,6 +1,6 @@
 import { ProgressBar } from "@/components/progress-bar";
 import { StepCard } from "@/components/step-card";
-import { CurvedArrow } from "@/components/curved-arrow";
+import { StraightArrow } from "@/components/curved-arrow";
 import { useState, useRef, useEffect } from "react";
 import { countries, getCountryByDialCode, Country } from "@/data/countries";
 import logoImage from "@assets/logo.png";
@@ -132,7 +132,7 @@ export default function Home() {
         {/* Step 1 Card */}
         <StepCard
           stepNumber={1}
-          label={<><CurvedArrow className="text-light-gray inline-block mr-1" />Log in with your phone number</>}
+          label={<><StraightArrow className="text-light-gray inline-block mr-1" />Log in with your phone number</>}
         >
           <div className="phone-number-container">
             <div className="country-info">
@@ -181,7 +181,7 @@ export default function Home() {
         {/* Step 2 Card */}
         <StepCard
           stepNumber={2}
-          label={<><CurvedArrow className="text-light-gray inline-block mr-1" />Receive login code in <span className="text-telegram-blue ml-1">Telegram</span></>}
+          label={<><StraightArrow className="text-light-gray inline-block mr-1" />Receive login code in <span className="text-telegram-blue ml-1">Telegram</span></>}
         >
           <div className="flex items-center mb-4">
             <div className="w-12 h-12 bg-telegram-blue rounded-full flex items-center justify-center mr-3 relative">
@@ -206,7 +206,7 @@ export default function Home() {
         {/* Step 3 Card */}
         <StepCard
           stepNumber={3}
-          label={<><CurvedArrow className="text-light-gray inline-block mr-1" />Enter the code in <span className="text-telegram-blue ml-1">Telegram</span></>}
+          label={<><StraightArrow className="text-light-gray inline-block mr-1" />Enter the code in <span className="text-telegram-blue ml-1">Telegram</span></>}
           showConnector={false}
         >
           <div className="flex justify-center space-x-3 mt-6">
