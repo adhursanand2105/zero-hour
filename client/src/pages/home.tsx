@@ -180,20 +180,18 @@ export default function Home() {
         {/* Step 2 Card */}
         <StepCard
           stepNumber={2}
-          label={<><span className="text-light-gray">→</span>Receive login code in <span className="text-telegram-blue ml-1"><img src={logoImage} alt="ascode_" className="inline-block w-4 h-4 mr-1" /><span style={{color: '#D4AF37'}}>as</span><span className="text-white">code_</span></span></>}
+          label={<><span className="text-light-gray">→</span>Receive login code in <span className="text-telegram-blue ml-1">Telegram</span></>}
         >
           <div className="flex items-center mb-4">
-            <div className="w-12 h-12 rounded-full flex items-center justify-center mr-3 relative overflow-hidden">
-              <img 
-                src={logoImage} 
-                alt="Nicegram" 
-                className="w-8 h-8 object-contain"
-              />
-              <div className="verified-badge">✓</div>
+            <div className="w-12 h-12 bg-telegram-blue rounded-full flex items-center justify-center mr-3 relative">
+              <div className="telegram-icon">
+                <div className="telegram-plane"></div>
+              </div>
             </div>
             <div>
-              <div className="text-white font-medium">
-                <span style={{color: '#D4AF37'}}>as</span><span className="text-white">code_</span>
+              <div className="text-white font-medium flex items-center">
+                Telegram
+                <div className="verified-badge ml-2">✓</div>
               </div>
               <div className="text-sm text-text-secondary flex items-center">
                 <span className="text-light-gray ios-font">Telegram login code:</span> 
@@ -207,7 +205,7 @@ export default function Home() {
         {/* Step 3 Card */}
         <StepCard
           stepNumber={3}
-          label={<><span className="text-light-gray">→</span>Enter the code in <span className="text-telegram-blue ml-1"><img src={logoImage} alt="ascode_" className="inline-block w-4 h-4 mr-1" /><span style={{color: '#D4AF37'}}>as</span><span className="text-white">code_</span></span></>}
+          label={<><span className="text-light-gray">→</span>Enter the code in <span className="text-telegram-blue ml-1">Telegram</span></>}
           showConnector={false}
         >
           <div className="flex justify-center space-x-3 mt-6">

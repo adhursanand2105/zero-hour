@@ -322,18 +322,15 @@
   }
   
   .telegram-icon {
-    width: 32px;
-    height: 32px;
-    background: linear-gradient(135deg, var(--telegram-blue), var(--social-proof));
-    border-radius: 50%;
+    width: 20px;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
   }
   
-  .telegram-icon::before {
-    content: '';
+  .telegram-plane {
     width: 16px;
     height: 16px;
     background: white;
@@ -341,9 +338,6 @@
   }
   
   .verified-badge {
-    position: absolute;
-    bottom: -2px;
-    right: -2px;
     width: 16px;
     height: 16px;
     background: var(--telegram-blue);
