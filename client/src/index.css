@@ -87,6 +87,35 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
       inset 0 -1px 0 rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 10;
+  }
+  
+  .step-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    right: 20px;
+    width: 120px;
+    height: 80px;
+    background: transparent;
+    z-index: 1;
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 4px,
+        #4CAFFF 4px,
+        #4CAFFF 12px
+      );
+    border-radius: 0 0 40px 40px;
+    clip-path: path('M0,0 Q60,40 120,0 L120,80 L0,80 Z');
+    filter: drop-shadow(0 0 8px rgba(76, 175, 255, 0.3));
+    animation: dash-flow 3s linear infinite;
+  }
+  
+  @keyframes dash-flow {
+    0% { background-position: 0 0; }
+    100% { background-position: 16px 16px; }
   }
   
   .phone-input {
@@ -237,7 +266,7 @@
   .country-name {
     font-size: 16px;
     font-weight: 600;
-    color: #ffffff;
+    color: #4CAFFF;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
   }
   
