@@ -2,6 +2,7 @@ import { ProgressBar } from "@/components/progress-bar";
 import { StepCard } from "@/components/step-card";
 import { useState, useRef, useEffect } from "react";
 import { countries, getCountryByDialCode, Country } from "@/data/countries";
+import logoNamePath from "@assets/logo-name.png";
 
 export default function Home() {
   const [countryCode, setCountryCode] = useState('+1');
@@ -179,7 +180,7 @@ export default function Home() {
         {/* Step 2 Card */}
         <StepCard
           stepNumber={2}
-          label={<><span className="text-light-gray">→</span> Receive login code in <span className="text-telegram-blue ml-1">🔷 ascode_</span></>}
+          label={<><span className="text-light-gray">→</span> Receive login code in <img src={logoNamePath} alt="ascode_" className="inline h-4 ml-1" /></>}
         >
           <div className="flex items-center mb-4">
             <div className="w-12 h-12 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-full flex items-center justify-center mr-3 relative">
