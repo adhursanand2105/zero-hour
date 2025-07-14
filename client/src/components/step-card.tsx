@@ -15,7 +15,7 @@ export function StepCard({ stepNumber, label, children, showConnector = true, cl
       <FloatingLabel stepNumber={stepNumber}>
         {label}
       </FloatingLabel>
-
+      {showConnector && <div className="dotted-connector"></div>}
       {children}
     </div>
   );
