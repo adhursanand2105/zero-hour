@@ -79,8 +79,8 @@
     position: relative;
     background: linear-gradient(135deg, hsl(0, 0%, 8%), hsl(0, 0%, 12%));
     border-radius: 16px;
-    padding: 16px;
-    margin: 16px 0;
+    padding: 20px;
+    margin: 24px 0;
     box-shadow: 
       0 12px 40px rgba(0, 0, 0, 0.6),
       0 4px 12px rgba(0, 0, 0, 0.4),
