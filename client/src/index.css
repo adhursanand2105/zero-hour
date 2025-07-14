@@ -75,12 +75,19 @@
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    min-height: 24px;
   }
   
-  .floating-label img {
+  .floating-label .logo-image {
+    height: 16px;
+    width: auto;
+    max-width: 80px;
+    object-fit: contain;
     background: transparent !important;
+    filter: invert(1) brightness(1.2) contrast(1.1);
     mix-blend-mode: screen;
+    opacity: 0.95;
   }
   
   .step-card {
