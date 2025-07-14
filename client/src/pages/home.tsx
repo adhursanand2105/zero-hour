@@ -184,7 +184,7 @@ export default function Home() {
           label={<><StraightArrow className="text-light-gray inline-block mr-1" />Receive login code in <span className="text-telegram-blue ml-1">Telegram</span></>}
         >
           <div className="flex items-center mb-4">
-            <div className="w-12 h-12 rounded-full flex items-center justify-center mr-3 relative overflow-hidden">
+            <div className="w-12 h-12 rounded-full flex items-center justify-center mr-3 relative overflow-hidden bg-gradient-to-br from-amber-900/20 to-yellow-900/30 border border-amber-700/20">
               <img 
                 src={logoImage} 
                 alt="ascode_" 
