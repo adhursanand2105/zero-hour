@@ -245,7 +245,7 @@
     position: relative;
     width: 100%;
     height: 8px;
-    margin: 12px 0 16px 0;
+    margin: 8px 0 4px 0;
     background: transparent;
   }
   
@@ -273,10 +273,9 @@
     content: '';
     position: absolute;
     right: -6px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: -8px;
     width: 1px;
-    height: 20px;
+    height: 28px;
     background: #444;
   }
   
