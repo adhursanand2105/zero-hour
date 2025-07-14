@@ -140,7 +140,7 @@ export default function Home() {
             
             <div className="phone-divider">
               <svg viewBox="0 0 300 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 2 L40 2 Q50 2 52 6 L300 2" stroke="#444" strokeWidth="1"/>
+                <path d="M0 2 L40 2 L45 6 L50 2 L300 2" stroke="#444" strokeWidth="1" fill="none"/>
               </svg>
             </div>
             
