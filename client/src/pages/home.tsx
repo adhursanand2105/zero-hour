@@ -173,6 +173,16 @@ export default function Home() {
               </div>
             </div>
           </div>
+          
+          {/* Curved Dashed Ribbon */}
+          <div className="step-ribbon">
+            <svg viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M75 5 Q50 25 25 15 Q10 10 5 25 Q0 40 15 45" 
+                    stroke="#4CAFFF" 
+                    strokeWidth="2" 
+                    fill="none"/>
+            </svg>
+          </div>
         </StepCard>
         
         {/* Step 2 Card */}
@@ -192,6 +202,16 @@ export default function Home() {
                 <button className="code-button ml-2">Generate</button>
               </div>
             </div>
+          </div>
+          
+          {/* Curved Dashed Ribbon */}
+          <div className="step-ribbon" style={{ left: '30px', right: 'auto' }}>
+            <svg viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 5 Q30 25 55 15 Q70 10 75 25 Q80 40 65 45" 
+                    stroke="#4CAFFF" 
+                    strokeWidth="2" 
+                    fill="none"/>
+            </svg>
           </div>
         </StepCard>
         
